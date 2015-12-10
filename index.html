@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<!-- Bootstrap stylesheet library--> 	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<!-- // <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+
+</head>
+
+<body>
+	<div>
+		<div class="container">
+
+				<div class ="row">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<form name="resultfield">
+							<input type="text" name="result" class="results">
+						</form>
+					</div>
+				</div>
+
+				<div class ="row">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<button class="button" value="7" name="seven" id="seven"> 7</button>
+						<button class="button" value="8" name="eight" id="eight"> 8</button>
+						<button class="button" value="9" name="nine" id="nine"> 9</button>
+						<button class="button" name="multiplication" id="multiplication">*</button>
+					</div>
+				</div>
+		
+				<div class ="row">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<button class="button" value="4" name="four" id="four"> 4</button>
+						<button class="button" value="5" name="five" id="five"> 5</button>
+						<button class="button" value="6" name="six" id="six"> 6</button>
+						<button class="button" name="subtraction" id="subtraction">-</button>
+					</div>
+				</div>
+
+				<div class ="row">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<button class="button" value="1" name="one" id="one"> 1</button>
+						<button class="button" value="2" name="two" id="two"> 2</button>
+						<button class="button" value="3" name="three" id="three"> 3</button>
+						<button class="button" name="addition" id="addition">+</button>
+						
+					</div>
+				</div>
+				
+
+				<div class ="row">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<button class="button" value="0" name="zero" id="zero"> 0</button>
+						<button class="button" value="equal" name="equal" id="equal">=</button>
+						<button class="button" value="clear" name="clear" id="clear">C</button>
+						<button class="button" value="division" name="division" id="division">/</button>
+					</div>
+				</div>
+		
+		</div>
+	
+	</div>
+
+</body>
+</html>
+
+
+
+<script type="text/javascript">
+
+var global_1 = 0;
+var global_2 = 0;
+var global_1_new = 0;
+var operation = ""; 
+
+
+// clear the result field at the top
+document.getElementById("clear").onclick = function() {
+	document.resultfield.result.value = 0;
+	global_1 = 0; 
+	global_2 = 0; 
+	global_1_new = 0;
+	 
+
+}
+
+function clearoff() {
+	return document.resultfield.result.value = 0;
+	
+}
+
+document.getElementById("zero").onclick = function() {
+	
+	if(global_1_new > 0){
+		var newnum = global_2.toString();
+			if(global_2 == 0){
+				newnum = 0;
+				document.resultfield.result.value = newnum;
+				global_2 = parseInt(newnum);
+				return;
+			}
+
+		newnum += 0; 
+		document.resultfield.result.value = newnum;
+		global_2 = parseInt(newnum);
+
+	}
+
+	else {
+	var newnum = global_1.toString(); 
+	if(newnum == 0){
+		newnum = 0; 
+		document.resultfield.result.value = newnum;
+		global_1 = parseInt(newnum);
+		return;
+	}
+
+	newnum += 0; 
+	document.resultfield.result.value = newnum;
+	global_1 = parseInt(newnum);
+
+	}
+	 
+}
+
+document.getElementById("one").onclick = function() {
+	
+	if(global_1_new > 0){
+		var newnum = global_2.toString();
+			if(global_2 == 0){
+				newnum = 1;
+				document.resultfield.result.value = newnum;
+				global_2 = parseInt(newnum);
+				return;
+			}
+
+		newnum += 1; 
+		document.resultfield.result.value = newnum;
+		global_2 = parseInt(newnum);
+
+	}
+
+	else {
+	var newnum = global_1.toString(); 
+	if(newnum == 0){
+		newnum = 1; 
+		document.resultfield.result.value = newnum;
+		global_1 = parseInt(newnum);
+		return;
+	}
+
+	newnum += 1; 
+	document.resultfield.result.value = newnum;
+	global_1 = parseInt(newnum);
+
+
+	}
+	 
+}
+
+document.getElementById("two").onclick = function() {
+
+
+	if(global_1_new > 0){
+		var newnum = global_2.toString();
+			if(global_2 == 0){
+				newnum = 2;
+				document.resultfield.result.value = newnum;
+				global_2 = parseInt(newnum);
+				return;
+			}
+
+		newnum += 2; 
+		document.resultfield.result.value = newnum;
+		global_2 = parseInt(newnum);
+
+	}
+
+	else {
+	var newnum = global_1.toString(); 
+	if(newnum == 0){
+		newnum = 2; 
+		document.resultfield.result.value = newnum;
+		global_1 = parseInt(newnum);
+		return;
+	}
+
+	newnum += 2; 
+	document.resultfield.result.value = newnum;
+	global_1 = parseInt(newnum);
+
+
+	}
+
+}
+
+document.getElementById("three").onclick = function() {
+	
+	if(global_1_new > 0){
+		var newnum = global_2.toString();
+			if(global_2 == 0){
+				newnum = 3;
+				document.resultfield.result.value = newnum;
+				global_2 = parseInt(newnum);
+				return;
+			}
+
+		newnum += 3; 
+		document.resultfield.result.value = newnum;
+		global_2 = parseInt(newnum);
+
+	}
+
+	else {
+	var newnum = global_1.toString(); 
+	if(newnum == 0){
+		newnum = 3; 
+		document.resultfield.result.value = newnum;
+		global_1 = parseInt(newnum);
+		return;
+	}
+
+	newnum += 3; 
+	document.resultfield.result.value = newnum;
+	global_1 = parseInt(newnum);
+
+	}
+	 
+}
+
+document.getElementById("four").onclick = function() {
+	
+	if(global_1_new > 0){
+		var newnum = global_2.toString();
+			if(global_2 == 0){
+				newnum = 4;
+				document.resultfield.result.value = newnum;
+				global_2 = parseInt(newnum);
+				return;
+			}
+
+		newnum += 4; 
+		document.resultfield.result.value = newnum;
+		global_2 = parseInt(newnum);
+
+	}
+
+	else {
+	var newnum = global_1.toString(); 
+	if(newnum == 0){
+		newnum = 4; 
+		document.resultfield.result.value = newnum;
+		global_1 = parseInt(newnum);
+		return;
+	}
+
+	newnum += 4; 
+	document.resultfield.result.value = newnum;
+	global_1 = parseInt(newnum);
+
+	}
+	 
+}
+
+document.getElementById("five").onclick = function() {
+	
+	if(global_1_new > 0){
+		var newnum = global_2.toString();
+			if(global_2 == 0){
+				newnum = 5;
+				document.resultfield.result.value = newnum;
+				global_2 = parseInt(newnum);
+				return;
+			}
+
+		newnum += 5; 
+		document.resultfield.result.value = newnum;
+		global_2 = parseInt(newnum);
+
+	}
+
+	else {
+	var newnum = global_1.toString(); 
+	if(newnum == 0){
+		newnum = 5; 
+		document.resultfield.result.value = newnum;
+		global_1 = parseInt(newnum);
+		return;
+	}
+
+	newnum += 5; 
+	document.resultfield.result.value = newnum;
+	global_1 = parseInt(newnum);
+
+	}
+	 
+}
+
+document.getElementById("six").onclick = function() {
+	
+	if(global_1_new > 0){
+		var newnum = global_2.toString();
+			if(global_2 == 0){
+				newnum = 6;
+				document.resultfield.result.value = newnum;
+				global_2 = parseInt(newnum);
+				return;
+			}
+
+		newnum += 6; 
+		document.resultfield.result.value = newnum;
+		global_2 = parseInt(newnum);
+
+	}
+
+	else {
+	var newnum = global_1.toString(); 
+	if(newnum == 0){
+		newnum = 6; 
+		document.resultfield.result.value = newnum;
+		global_1 = parseInt(newnum);
+		return;
+	}
+
+	newnum += 6; 
+	document.resultfield.result.value = newnum;
+	global_1 = parseInt(newnum);
+
+	}
+	 
+}
+
+
+document.getElementById("seven").onclick = function() {
+	
+	if(global_1_new > 0){
+		var newnum = global_2.toString();
+			if(global_2 == 0){
+				newnum = 7;
+				document.resultfield.result.value = newnum;
+				global_2 = parseInt(newnum);
+				return;
+			}
+
+		newnum += 7; 
+		document.resultfield.result.value = newnum;
+		global_2 = parseInt(newnum);
+
+	}
+
+	else {
+	var newnum = global_1.toString(); 
+	if(newnum == 0){
+		newnum = 7; 
+		document.resultfield.result.value = newnum;
+		global_1 = parseInt(newnum);
+		return;
+	}
+
+	newnum += 7; 
+	document.resultfield.result.value = newnum;
+	global_1 = parseInt(newnum);
+
+	}
+	 
+}
+
+document.getElementById("eight").onclick = function() {
+	
+	if(global_1_new > 0){
+		var newnum = global_2.toString();
+			if(global_2 == 0){
+				newnum = 8;
+				document.resultfield.result.value = newnum;
+				global_2 = parseInt(newnum);
+				return;
+			}
+
+		newnum += 8; 
+		document.resultfield.result.value = newnum;
+		global_2 = parseInt(newnum);
+
+	}
+
+	else {
+	var newnum = global_1.toString(); 
+	if(newnum == 0){
+		newnum = 8; 
+		document.resultfield.result.value = newnum;
+		global_1 = parseInt(newnum);
+		return;
+	}
+
+	newnum += 8; 
+	document.resultfield.result.value = newnum;
+	global_1 = parseInt(newnum);
+
+	}
+	 
+}
+
+document.getElementById("nine").onclick = function() {
+	
+	if(global_1_new > 0){
+		var newnum = global_2.toString();
+			if(global_2 == 0){
+				newnum = 9;
+				document.resultfield.result.value = newnum;
+				global_2 = parseInt(newnum);
+				return;
+			}
+
+		newnum += 9; 
+		document.resultfield.result.value = newnum;
+		global_2 = parseInt(newnum);
+
+	}
+
+	else {
+	var newnum = global_1.toString(); 
+	if(newnum == 0){
+		newnum = 9; 
+		document.resultfield.result.value = newnum;
+		global_1 = parseInt(newnum);
+		return;
+	}
+
+	newnum += 9; 
+	document.resultfield.result.value = newnum;
+	global_1 = parseInt(newnum);
+
+	}
+	 
+}
+
+
+
+/*OPERATIONS*/ 
+document.getElementById("addition").onclick = function() {
+
+	operation = "addition"; 
+	global_1_new = global_1; 
+	
+	// clear_off_results_display();
+	
+}
+
+document.getElementById("subtraction").onclick = function() {
+
+	operation = "subtraction"; 
+	global_1_new = global_1; 
+	
+	// clear_off_results_display();
+	
+}
+
+document.getElementById("multiplication").onclick = function() {
+
+
+	operation = "multiplication"; 
+	global_1_new = global_1; 
+	// clear_off_results_display();
+
+
+	
+}
+
+document.getElementById("division").onclick = function() {
+
+	operation = "division"; 
+	global_1_new = global_1; 
+	
+	// clear_off_results_display();
+	
+}
+
+
+
+document.getElementById("equal").onclick = function() {
+
+
+switch(operation){
+	case "addition": 
+		var result = global_1 + global_2; 
+		document.resultfield.result.value = result; 
+		global_1 = result;
+		global_2 = 0; 
+		break;
+	case "subtraction": 
+		var result = global_1 - global_2; 
+		document.resultfield.result.value = result; 
+		global_1 = result;
+		global_2 = 0; 
+		break;
+	case "multiplication": 
+		var result = global_1 * global_2; 
+		document.resultfield.result.value = result;
+		global_1 = result;
+		global_2 = 0;  
+		break;
+	case "division": 
+		var result = global_1 / global_2; 
+		document.resultfield.result.value = result; 
+		global_1 = result;
+		global_2 = 0; 
+		break;	
+
+}
+
+
+
+}
+
+function clear_off_results_display() {
+	document.resultfield.result.value = global_1_new; 
+}
+
+
+
+</script>
+
